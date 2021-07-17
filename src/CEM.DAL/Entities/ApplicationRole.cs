@@ -2,7 +2,7 @@
 
 namespace CEM.DAL.Entities
 {
-    public class AccountRole : IdentityRole
+    public class ApplicationRole : IdentityRole<long>
     {
     }
 }

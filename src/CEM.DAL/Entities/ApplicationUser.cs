@@ -2,7 +2,7 @@
 
 namespace CEM.DAL.Entities
 {
-    public class AccountUser : IdentityUser
+    public class ApplicationUser : IdentityUser<long>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
