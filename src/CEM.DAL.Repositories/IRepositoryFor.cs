@@ -13,9 +13,7 @@ namespace CEM.DAL.Repositories
 
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> where = null);
 
-        TEntity Get(Guid id);
-
-        Task<TEntity> GetAsync(Guid id);
+        Task<TEntity> GetAsync(long id);
 
         IQueryable<TEntity> GetAll(Expression<Func<TEntity, bool>> where = null);
 

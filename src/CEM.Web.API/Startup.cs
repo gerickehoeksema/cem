@@ -85,10 +85,11 @@ namespace CEM.Web.API
                 options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidAudience = jwtConfig.Audience,
-                    ValidIssuer = jwtConfig.Issuer,
+                    ValidateIssuerSigningKey = true,
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    //ValidAudience = jwtConfig.Audience,
+                    //ValidIssuer = jwtConfig.Issuer,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.Secret))
                 };
             });
@@ -137,6 +138,8 @@ namespace CEM.Web.API
             });
             #endregion
 
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             services.AddControllers();
         }
 
@@ -154,10 +157,9 @@ namespace CEM.Web.API
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {

@@ -63,8 +63,12 @@ namespace CEM.DAL
                     UserId = employeeUser.Id,
                     IsActive = true
                 };
+
+                await context.AddAsync(defaultEmployee).ConfigureAwait(false);
             }
             #endregion DEFAULT EMPLOYEE
+
+            await context.SaveChangesAsync().ConfigureAwait(false);
         }
     }
 }

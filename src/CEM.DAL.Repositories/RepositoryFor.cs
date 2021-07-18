@@ -17,9 +17,7 @@ namespace CEM.DAL.Repositories
             return entity;
         }
 
-        public virtual TEntity Get(Guid id) => context.Set<TEntity>().Find(id);
-
-        public virtual async Task<TEntity> GetAsync(Guid id) => await context.Set<TEntity>().FindAsync(id).ConfigureAwait(false);
+        public virtual async Task<TEntity> GetAsync(long id) => await context.Set<TEntity>().FindAsync(id).ConfigureAwait(false);
 
         public virtual TEntity Get(Expression<Func<TEntity, bool>> where = null) => GetAll(where).FirstOrDefault();
 
