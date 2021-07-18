@@ -4,6 +4,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - SolutionItems", "00 - SolutionItems", "{A89ADECF-DDE0-49C5-929D-69249EC94CCA}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\Assignment-Senior.docx = ..\Assignment-Senior.docx
+		..\README.md = ..\README.md
+		..\Senior Developer Checklist.xlsx = ..\Senior Developer Checklist.xlsx
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - WebApp", "01 - WebApp", "{0CC51882-F14F-411D-AACB-C15D5B155409}"
 EndProject
@@ -23,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CEM.Web.App", "CEM.Web.App\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CEM.DAL", "CEM.DAL\CEM.DAL.csproj", "{43EBEA4F-6B07-4ABA-B629-DB93578E4263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEM.DAL.Repositories", "CEM.DAL.Repositories\CEM.DAL.Repositories.csproj", "{CD3768C8-30F8-433B-A720-295844EF88D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CEM.DAL.Repositories", "CEM.DAL.Repositories\CEM.DAL.Repositories.csproj", "{CD3768C8-30F8-433B-A720-295844EF88D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEM.DAL.UnitOfWork", "CEM.DAL.UnitOfWork\CEM.DAL.UnitOfWork.csproj", "{83FF1D35-22B0-4440-B4DC-79E67AF6F004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CEM.DAL.UnitOfWork", "CEM.DAL.UnitOfWork\CEM.DAL.UnitOfWork.csproj", "{83FF1D35-22B0-4440-B4DC-79E67AF6F004}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

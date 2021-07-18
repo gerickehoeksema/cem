@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CEM.Web.API</name>
+    </assembly>
+    <members>
+        <member name="T:CEM.Web.API.Controllers.AccountController">
+            <summary>
+            Manages accounts
+            </summary>
+        </member>
+        <member name="M:CEM.Web.API.Controllers.AccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{CEM.DAL.Entities.ApplicationUser},Microsoft.AspNetCore.Identity.SignInManager{CEM.DAL.Entities.ApplicationUser},CEM.Web.API.Models.Configuration.IJwtConfiguration)">
+            <summary>
+            Dependencies required to manage accounts
+            </summary>
+            <param name="userManager"></param>
+            <param name="signInManager"></param>
+            <param name="jwtConfiguration"></param>
+        </member>
+        <member name="M:CEM.Web.API.Controllers.AccountController.Login(CEM.Web.API.Models.LoginModel)">
+            <summary>
+            Login user or employee
+            </summary>
+            <param name="model"></param>
+            <returns>JWT Token</returns>
+        </member>
+    </members>
+</doc>

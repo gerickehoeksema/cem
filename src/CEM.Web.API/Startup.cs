@@ -2,6 +2,7 @@ using CEM.DAL;
 using CEM.DAL.Entities;
 using CEM.DAL.Repositories;
 using CEM.DAL.UnitOfWork;
+using CEM.Web.API.Models.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -63,6 +64,12 @@ namespace CEM.Web.API
             });
             #endregion CORS
 
+            #region AppSettings Configurations
+            var jwtConfig = new JwtConfiguration();
+            Configuration.Bind("Jwt", jwtConfig);
+            services.AddSingleton<IJwtConfiguration>(jwtConfig);
+            #endregion AppSettings Configurations
+
             #region Auth
             // Adding Authentication  
             services.AddAuthentication(options =>
@@ -80,9 +87,9 @@ namespace CEM.Web.API
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
-                    ValidAudience = "https://localhost:5010",
-                    ValidIssuer = "https://localhost:5000",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ByYM000OLlMQG6VVVp1OH7Xzyr7gHuw1qvUC5dcGt3SNM"))
+                    ValidAudience = jwtConfig.Audience,
+                    ValidIssuer = jwtConfig.Issuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.Secret))
                 };
             });
             #endregion Auth

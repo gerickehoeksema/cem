@@ -1,31 +1,45 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Casual Employee Manager | Log in</title>
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<CEM.Web.App.Models.SiteOrigins> baseSites
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link href="~/css/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
-    <!-- icheck bootstrap -->
-    <link href="~/css/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
-    <!-- Theme style -->
-    <link href="~/css/adminlte.min.css" rel="stylesheet" />
-</head>
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <!-- /.login-logo -->
-        @RenderBody()
-        <!-- /.card -->
-    </div>
-    <!-- /.login-box -->
-    <!-- jQuery -->
-    <script src="~/lib/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/js/adminlte.min.js"></script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Casual Employee Manager | Log in</title>
+
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Font Awesome -->
+        <link href="~/css/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+        <!-- icheck bootstrap -->
+        <link href="~/css/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
+
+        <link href="~/css/plugins/sweetalert2/sweetalert2.css" rel="stylesheet" />
+        <!-- Theme style -->
+        <link href="~/css/adminlte.min.css" rel="stylesheet" />
+    </head>
+    <body class="hold-transition login-page">
+        <div class="login-box">
+            <!-- /.login-logo -->
+            @RenderBody()
+            <!-- /.card -->
+        </div>
+        <!-- /.login-box -->
+        <!-- jQuery -->
+        <script src="~/lib/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="~/lib/sweetalert2/sweetalert2.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="~/js/adminlte.min.js"></script>
+
+        <!--CUSTOM-->
+        <script asp-append-version="true" src="~/js/helpers/utilities.js"></script>
+        <script>
+        const API_BaseURL = '@baseSites.Value.API';
+        </script>
+        @RenderSection("scripts", false)
+    </body>
 </html>
